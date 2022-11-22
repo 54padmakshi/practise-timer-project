@@ -3,24 +3,27 @@
 //24:59
 //25:00
 
-let minutes = 25;
-let seconds = 0;
+let minutes = 24;
+let seconds = 59;
 
 
 
 function start() {
     interval = setInterval(()=>{
- if (seconds == 0) {
-    seconds=59;
-    minutes--;    
- }
- seconds--;
+        displayTime(minutes,seconds);  
 
- if (minutes == 0 && seconds == 0) {
-    stop();
-    alert(" Times's Up!");
- }
- displayTime(minutes,seconds);
+        if (seconds == 0) {
+     seconds=59;
+     minutes--;    
+     }
+     seconds--;
+
+      if (minutes == 0 && seconds == 0) {
+      stop();
+      alert(" Times's Up!");
+      }
+      
+      
     },1000);
 }
 
@@ -29,9 +32,9 @@ function stop() {
     }
 function reset() {
     stop();
-    minutes =25;
-    seconds =0;
-    displayTime(minutes,seconds);
+    minutes =24;
+    seconds =59;
+    displayTime('25','00');
 }
 function displayTime(minutes,seconds) {
     document.getElementById("timer").innerHTML = minutes + " : "  + seconds  ;
